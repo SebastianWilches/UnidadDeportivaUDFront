@@ -1,0 +1,111 @@
+.bold{
+    font-weight: bold;
+}
+nav{
+    margin-bottom: 100px;
+}
+.formCreatePersonal{
+    margin-bottom: 100px;
+}
+
+/* Header */
+:root {
+    /*Colores*/
+    --Primario: #0D0D0D;
+    --Primario2: #262625;
+    --Secundario1: #F25D27;
+    --Secundario2: #F2A922;
+    --Secundario3: #4EBF4B;
+    --Secundario4: #F22738;
+    --Secundario5: #F2E74B;
+    --Degradado1: #8C8C87;
+    --Degradado2: #D9D8D2;
+    --Fondo: #F2F2EB;
+    --Blanco: #fff;
+    /*Fuentes*/
+    --logo: 'Montserrat Subrayada', sans-serif;
+    ;
+    --titulos: 'Montserrat', sans-serif;
+    --textos: 'Raleway', sans-serif;
+    --test: 'Amatic SC', cursive;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(../img/banner.jpg);
+    margin-bottom: 20px;
+}
+
+.header-texto {
+    text-align: center;
+    color: var(--Fondo);
+    padding-top: 5rem;
+}
+
+.barra {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--Secundario1);
+    font-size: 200%;
+}
+
+.logo__nombre {
+    font-weight: 400;
+}
+
+.logo__bold {
+    font-weight: 700;
+}
+
+.textoh1{
+    font-family: var(--test);
+    font-size: 80px;
+}
+
+.textoh2{
+    font-family: var(--titulos);
+    line-height: 1.2;
+    font-size: 40px;
+}
+
+.parrafo{
+    font-family: var(--textos);
+    line-height: 2;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.container{
+    margin: auto;
+}
+.cardBusqueda{
+    margin: auto;
+    border: 3px dashed black;
+    background-color: lightgray;
+}
+
+.titulo{
+    grid-column:1 / span 2;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* FORM */
+.formCreatePersonal{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
