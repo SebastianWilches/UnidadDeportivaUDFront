@@ -25,7 +25,9 @@ const asistenciaDocente = () => {
     window.location.href = "../UnidadDeportivaFrontend-master/asistenciaDocente.html"
 }
 
-
+const asistenciaPasante = () => {
+    window.location.href = "../UnidadDeportivaFrontend-master/asistenciaPasante.html"
+}
 
 getLocalStorage();
 

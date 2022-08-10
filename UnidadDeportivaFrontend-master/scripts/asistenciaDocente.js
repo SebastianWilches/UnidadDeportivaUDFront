@@ -78,15 +78,6 @@ const buscarElementosDeportivos = async (nombre, apellido) => {
                             <label class="" > Estado: ${dataElementosDeportivos.estado.descestado}</label>
                             `
 
-
-  // arrayElemDepor.push({
-  //   desctipoelemento: dataElementosDeportivos.tipoElemento.desctipoelemento,
-  //   descestado: dataElementosDeportivos.estado.descestado,
-  //   nommarca: dataElementosDeportivos.marca.nommarca,
-  //   consecelemento: dataElementosDeportivos.consecelemento
-  // })
-  // console.log(arrayElemDepor);
-
 }
 
 
@@ -115,32 +106,14 @@ const cambiarEstadoElemDeportivo = async (id) => {
 
 const clickAsisDocente = () => {
   idElemenDeportivo = document.getElementById("checkElemenDeportivo");
+  
   if (idElemenDeportivo.checked == true) {
-    cambiarEstadoElemDeportivo(idElemenDeportivo)
+    cambiarEstadoElemDeportivo(idElemenDeportivo.value)
+  }else{
+    alert("No tiene ningun elemento seleccionado");
   }
 
   // cambiarEstadoElemDeportivo(idElemenDeportivo);
 
 }
-
-
-
-
-/*
-function crearCheckBox() {
-  container.innerHTML += `<form action="">`
-  //console.log(objeto2);
-  Object.entries(arrayElemDepor).forEach(([key, value]) => {
-    container.innerHTML += `<input type="checkbox" class="casilla" id="objeto1" name="${value.nombre}" value="${value.nombre}">
-                            <label class="nombreElem" for="${value.nombre}"> ${value.nombre} de marca ${value.marca}</label>
-                            <label class="cantidadElem" for="${value.nombre}"> Cantidad: ${value.cantidad}</label>`
-  })
-
-  container.innerHTML += ` <input class="botonRegistro" type="submit" value="Submit">
-</form>`
-}
-crearCheckBox();
-*/
-
-
 

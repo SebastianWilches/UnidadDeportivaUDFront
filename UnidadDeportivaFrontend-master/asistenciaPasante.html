@@ -23,10 +23,11 @@
 
 <body>
     <header class="header">
-        <div class="container">
+        <div class="containerNavBar">
             <div class="barra">
                 <a href="index.html" class="logo">
-                    <h1 class="logo__nombre no-margin centrar-texto textoh1">Unidad<span class="logo__bold"> Deportiva</span>
+                    <h1 class="logo__nombre no-margin centrar-texto textoh1">Unidad<span class="logo__bold">
+                            Deportiva</span>
                     </h1>
                 </a>
 
@@ -41,17 +42,94 @@
     </header>
 
 
-    <!-- <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="img/jugador-de-futbol.png" alt="" width="70" height="70"
-                    class="d-inline-block align-text-top">
-            </a>
-            <span class="navbar-brand mb-0 h1">Unidad Deportiva</span>
-        </div>
-    </nav> -->
-
+    <h1 class="titulo">📒 Registro Asistencia Pasante 📒 </h1>
     <section class="container">
+        <div class="card cardBusqueda" style="width: 20rem;">
+            <div class="card-body">
+                <h5 class="card-title">Consultar pasante</h5>
+                <form>
+                    <div class="mb-3">
+                        <label for="codigoPasante" class="form-label">Codigo pasante:</label>
+                        <input type="text" class="form-control" id="codigoPasante" placeholder="Codigo">
+                    </div>
+                    <button type="button" class="btn btn-warning" onclick="getInfoPasante()">Consultar pasante</button>
+                </form>
+
+            </div>
+        </div>
+
+        <div class="card cardBusqueda" style="width: 20rem;">
+            <div class="card-body">
+                <h5 class="card-title">Datos del pasante</h5>
+                <div class="mb-3">
+                    <label class="form-label"><span class="bold">Codigo: </span> <span id="resultCod"></span></label>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label"><span class="bold">Nombre: </span> <span id="resultNom"></span></label>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label"><span class="bold">Apellido: </span> <span id="resultApell"></span></label>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label"><span class="bold">Correo: </span> <span id="resultCorreo"></span></label>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label"><span class="bold">Fecha inicio pasantia: </span> <span id="resultFechaIni"></span></label>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label"><span class="bold">Periodo: </span> <span id="resultPeriodo"></span></label>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label"><span class="bold">Dia: </span> <span id="resultDia"></span></label>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label"><span class="bold">Hora inicio: </span> <span id="resultHoraIni"></span></label>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label"><span class="bold">Hora fin: </span> <span id="resultHoraFin"></span></label>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label"><span class="bold">Sede: </span> <span id="resultSede"></span></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="card cardBusqueda" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Practicas libres del pasante</h5>
+                <div class="mb-3">
+                    <label class="form-label"><span class="bold">Actividad: </span> <span id="pasanteActividad"></span></label>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label"><span class="bold">Espacio: </span> <span id="pasanteEspacio"></span></label>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label"><span class="bold">Deporte: </span> <span id="pasanteDeporte"></span></label>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label"><span class="bold">Número Inscritos: </span> <span id="pasanteNoInscritos"></span></label>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label"><span class="bold">Cupos: </span> <span id="pasanteCupos"></span></label>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <section id="sectionElementos" style="visibility:hidden;">
+            <div class="cardElem" id="cardElementos">
+            </div>
+            <button type="button" class="btn btn-warning" onclick="clickAsisDocente()">Registrar asistencia</button>
+        </section>
+
+
+
+    </section>
+
+
+    <!-- <section class="container">
         <h1 class="titulo">📒 Registro Asistencia Pasante 📒 </h1>
           <div class="card cardBusqueda" style="width: 18rem;">
             <div class="card-body">
@@ -68,8 +146,8 @@
           
           
         
-    </section>
+    </section> -->
 
 </body>
-<script src="scripts/asistenciaDocente.js"></script>
+<script src="scripts/asistenciaPasante.js"></script>
 </html>
