@@ -23,7 +23,7 @@
 
 <body>
     <header class="header">
-        <div class="container">
+        <div class="containerNavBar">
             <div class="barra">
                 <a href="index.html" class="logo">
                     <h1 class="logo__nombre no-margin centrar-texto textoh1">Unidad<span class="logo__bold">
@@ -117,13 +117,16 @@
                 <div class="mb-3">
                     <label class="form-label"><span class="bold">Dia:</span> <span id="resultDia"></span></label>
                 </div>
+
+
             </div>
         </div>
 
-
-        <div class="cardElem" id="cardElementos">
-        </div>
-        <
+        <section id="sectionElementos" style="visibility:hidden;">
+            <div class="cardElem" id="cardElementos">
+            </div>
+            <button type="button" class="btn btn-warning" onclick="clickAsisDocente()">Registrar asistencia</button>
+        </section>
 
 
 

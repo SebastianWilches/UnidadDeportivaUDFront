@@ -69,14 +69,14 @@ const buscarCursos = async (nombre, apellido) => {
 
 const buscarElementosDeportivos = async (nombre, apellido) => {
   const URL = `${API}Auxiliar/consultarElementosDeportivos?nombre=${nombre}&apellido=${apellido}`;
-  const response = await fetch(URL)
-  const dataElementosDeportivos = await response.json()
+  const response = await fetch(URL);
+  const dataElementosDeportivos = await response.json();
 
-  cardElementos.innerHTML = `<input class="form-check-input" type="checkbox" value="${dataElementosDeportivos.consecelemento}" id="checkElemenDeportivo${dataElementosDeportivos.consecelemento}">
+  cardElementos.innerHTML = `<input class="form-check-input" type="checkbox" value="${dataElementosDeportivos.consecelemento}" id="checkElemenDeportivo">
                             <label class="" > Elemento: ${dataElementosDeportivos.tipoElemento.desctipoelemento}</label>
                             <label class="" > Marca: ${dataElementosDeportivos.marca.nommarca}</label>
-                            <label class="" > Estado: ${dataElementosDeportivos.estado.descestado}</label>`
-// <input type="checkbox" class="casilla" id="elemenDepor${dataElementosDeportivos.consecelemento}" name="elemenDepor${dataElementosDeportivos.consecelemento}" value="elemenDepor${dataElementosDeportivos.consecelemento}">
+                            <label class="" > Estado: ${dataElementosDeportivos.estado.descestado}</label>
+                            `
 
 
   // arrayElemDepor.push({
@@ -89,23 +89,44 @@ const buscarElementosDeportivos = async (nombre, apellido) => {
 
 }
 
+
+
 const getInfoDocente = () => {
+  let sectionElementos = document.getElementById('sectionElementos');
+  console.log("ENTRO AL METODO");
   nom = document.getElementById("nombreDocente").value;
   apell = document.getElementById("apellidoDocente").value;
 
   buscarDocente(nom, apell);
   buscarCursos(nom, apell);
+  sectionElementos.style.visibility = "visible";
   buscarElementosDeportivos(nom, apell);
 }
 
-const getElemen = async (Deporte) => {
-  const response = await fetch(API)
-  const dataElemen = await response.json()
-  Elementos = data
+
+const cambiarEstadoElemDeportivo = async (id) => {
+  const URL = `${API}Auxiliar/cambiarEstadoElementoDeportivo/${id}`;
+  const response = await fetch(URL, {
+    method: 'PUT'
+  });
+  const data = await response.json();
+  console.log(data);
 }
 
-let container = document.getElementById('cardElementos');
+const clickAsisDocente = () => {
+  idElemenDeportivo = document.getElementById("checkElemenDeportivo");
+  if (idElemenDeportivo.checked == true) {
+    cambiarEstadoElemDeportivo(idElemenDeportivo)
+  }
 
+  // cambiarEstadoElemDeportivo(idElemenDeportivo);
+
+}
+
+
+
+
+/*
 function crearCheckBox() {
   container.innerHTML += `<form action="">`
   //console.log(objeto2);
@@ -118,8 +139,8 @@ function crearCheckBox() {
   container.innerHTML += ` <input class="botonRegistro" type="submit" value="Submit">
 </form>`
 }
-
-
-
 crearCheckBox();
+*/
+
+
 
